@@ -100,8 +100,15 @@ example of the various types of pieces and languages you might see (queues, pers
 deal with them in Docker at a basic level. 
 
 
-
+'''
 cd vote
 docker build . -t voting-app
 docker run -p 5000:80 voting-app
-do
+
+docker run -d --name=redis redis 
+docker container logs 70c
+docker run -p 5000:80 --links redis:redis voting-app
+docker run -p 5000:80 --link redis:redis voting-app
+docker run -p 5000:80 --link redis:redis voting-app
+
+'''
